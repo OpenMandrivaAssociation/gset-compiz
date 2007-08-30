@@ -6,7 +6,7 @@
 %else
 %define srcversion %{version}
 %endif
-%define release %mkrel 6
+%define release %mkrel 7
 
 Summary: A compiz configuration tool
 Name: %{name}
@@ -16,6 +16,7 @@ Source0: http://3v1n0.tuxfamily.org/src/%{name}-%{srcversion}.tar.bz2
 Patch0:  gset-compiz-lib_path.patch
 Patch1:  gset-compiz-0.3.4-root.patch
 Patch2:  gset-compiz-0.3.4-keys.patch
+Patch3:  gset-compiz-automake1.10.diff
 License: GPL
 Group: System/X11
 Url: http://www.compiz.net/
@@ -23,7 +24,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libglade2.0-devel
 BuildRequires: libGConf2-devel
 BuildRequires: desktop-file-utils
-BuildRequires: automake1.9
+BuildRequires: automake >= 1.10
 
 
 %description
@@ -34,9 +35,10 @@ gset-compiz is a GTK tool to configure compiz.
 %patch0 -p1 -b .lib_path
 %patch1 -p1 -b .root
 %patch2 -p1 -b .keys
+%patch3 -p0 -b .automake1.10
 
 %build
-automake
+aclocal; autoconf; automake; autoheader
 %configure2_5x
 %make
 
