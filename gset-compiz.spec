@@ -20,6 +20,7 @@ Patch3:  gset-compiz-automake1.10.diff
 License: GPL
 Group: System/X11
 Url: http://www.compiz.net/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libglade2.0-devel
 BuildRequires: libGConf2-devel
 BuildRequires: desktop-file-utils
