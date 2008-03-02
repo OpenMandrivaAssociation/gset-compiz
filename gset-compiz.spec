@@ -45,19 +45,19 @@ aclocal; autoconf; automake; autoheader
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall
-rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/README
+rm -f %{buildroot}%{_datadir}/%{name}/README
 
 desktop-file-install \
   --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-System-Configuration-Other" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications \
-  $RPM_BUILD_ROOT%{_datadir}/applications/*.desktop
+  --dir %{buildroot}%{_datadir}/applications \
+  %{buildroot}%{_datadir}/applications/*.desktop
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
 %update_menus
