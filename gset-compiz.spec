@@ -6,7 +6,7 @@
 %else
 %define srcversion %{version}
 %endif
-%define release %mkrel 7
+%define release %mkrel 8
 
 Summary: A compiz configuration tool
 Name: %{name}
@@ -38,6 +38,7 @@ gset-compiz is a GTK tool to configure compiz.
 %patch2 -p1 -b .keys
 %patch3 -p0 -b .automake1.10
 %patch4 -p1 -b .about_close
+perl -pi -e 's/\.png$//' data/%{name}.desktop
 
 %build
 aclocal; autoconf; automake; autoheader
