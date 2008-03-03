@@ -6,7 +6,7 @@
 %else
 %define srcversion %{version}
 %endif
-%define release %mkrel 8
+%define release %mkrel 9
 
 Summary: A compiz configuration tool
 Name: %{name}
@@ -18,6 +18,7 @@ Patch1:  gset-compiz-0.3.4-root.patch
 Patch2:  gset-compiz-0.3.4-keys.patch
 Patch3:  gset-compiz-automake1.10.diff
 Patch4:	 gset-compiz-0.3.4-about_close.patch
+Patch5:	 gset-compiz-0.3.4-iValue.patch
 License: GPL
 Group: System/X11
 Url: http://www.compiz.net/
@@ -38,6 +39,7 @@ gset-compiz is a GTK tool to configure compiz.
 %patch2 -p1 -b .keys
 %patch3 -p0 -b .automake1.10
 %patch4 -p1 -b .about_close
+%patch5 -p1 -b .iValue
 perl -pi -e 's/\.png$//' data/%{name}.desktop
 
 %build
