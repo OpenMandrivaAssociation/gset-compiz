@@ -6,7 +6,7 @@
 %else
 %define srcversion %{version}
 %endif
-%define release %mkrel 11
+%define release %mkrel 12
 
 Summary: A compiz configuration tool
 Name: %{name}
