@@ -1,0 +1,280 @@
+--- gset-compiz-0.3.4/src/gset.c.keys	2006-09-21 07:20:46.000000000 -0400
++++ gset-compiz-0.3.4/src/gset.c	2006-09-21 07:52:21.000000000 -0400
+@@ -93,15 +93,15 @@
+ {"Mini_zoom", 		MINI_KEYS, 	"zoom_created_windows", 	3},
+ {"Mini_center", 	MINI_KEYS, 	"zoom_created_windows_from_center",3},
+ 
+-{"Move_opacity", 	MOVE_KEYS, 	"opacity", 			4}, 
+-{"Move_con_y", 		MOVE_KEYS, 	"constrain_y", 			3},	
+-{"Move_snapoff", 	MOVE_KEYS, 	"snapoff_maximized",		3},
+-{"Move_min_opacity", 	MOVE_KEYS, 	"opacify_min_opacity",		4},
++{"Move_opacity", 	MOVE_ALL_KEYS, 	"opacity", 			4}, 
++{"Move_con_y", 		MOVE_ALL_KEYS, 	"constrain_y", 			3},	
++{"Move_snapoff", 	MOVE_ALL_KEYS, 	"snapoff_maximized",		3},
++{"Move_min_opacity", 	MOVE_ALL_KEYS, 	"opacify_min_opacity",		4},
+ 
+ {"Place_work", 		PLACE_KEYS, 	"workarounds", 			3},
+ 
+-{"Resize_min_opacity",	RESIZE_KEYS, 	"opacify_min_opacity",		4},
+-{"Resize_opacity", 	RESIZE_KEYS, 	"opacity", 			4},
++{"Resize_min_opacity",	RESIZE_ALL_KEYS, 	"opacify_min_opacity",		4},
++{"Resize_opacity", 	RESIZE_ALL_KEYS, 	"opacity", 			4},
+ 
+ {"Scale_darken", 	SCALE_KEYS, 	"darken_back", 			3},
+ {"Scale_sloppy", 	SCALE_KEYS, 	"sloppy_focus", 		3},
+@@ -176,9 +176,9 @@
+ {"Bs_bright", 		BS_KEYS, 	"brightness_step", 		0},
+ {"Bs_sat", 		BS_KEYS, 	"saturation_step", 		0},
+ 
+-{"Water_offset", 	WATER_KEYS, 	"offset_scale", 		2},
+-{"Water_delay", 	WATER_KEYS, 	"rain_delay", 			0},
+-{"Water_bell", 		WATER_KEYS, 	"visual_bell", 			3},
++{"Water_offset", 	WATER_ALL_KEYS, 	"offset_scale", 		2},
++{"Water_delay", 	WATER_ALL_KEYS, 	"rain_delay", 			0},
++{"Water_bell", 		WATER_ALL_KEYS, 	"visual_bell", 			3},
+ 
+ {"Miniwin_ontop", 	MINIWIN_KEYS, 	"always_on_top", 		3},
+ {"Miniwin_hide_dock", 	MINIWIN_KEYS, 	"hide_dock_on_click", 		3},
+@@ -225,109 +225,109 @@
+ 
+ items shorts[] = {
+ 
+-{"Gen_menu", 		GEN_ALL_KEYS, 	"main_menu", 			1},
+-{"Gen_run", 		GEN_ALL_KEYS, 	"run", 				1},
+-{"Gen_window_menu", 	GEN_ALL_KEYS, 	"window_menu", 		1},
+-{"Gen_wMin", 		GEN_ALL_KEYS, 	"minimize_window", 		1},
+-{"Gen_wMax", 		GEN_ALL_KEYS, 	"maximize_window", 		1},
+-{"Gen_wUnmax", 	GEN_ALL_KEYS, 	"unmaximize_window", 		1},
+-{"Gen_wLower", 		GEN_ALL_KEYS, 	"lower_window", 		1},
+-{"Gen_wClose", 		GEN_ALL_KEYS, 	"close_window", 		1},
+-{"Gen_incOpacity", 	GEN_ALL_KEYS, 	"opacity_increase", 		1},
+-{"Gen_decOpacity", 	GEN_ALL_KEYS, 	"opacity_decrease", 		1},
+-{"Gen_slowAni", 	GEN_ALL_KEYS, 	"slow_animations", 		1},
+-{"Gen_screen", 		GEN_ALL_KEYS, 	"run_command_screenshot", 	1},
+-{"Gen_window", 		GEN_ALL_KEYS, 	"run_command_window_screenshot",1},
++{"Gen_menu", 		GEN_ALL_KEYS, 	"main_menu_key", 		1},
++{"Gen_run", 		GEN_ALL_KEYS, 	"run_key", 			1},
++{"Gen_window_menu", 	GEN_ALL_KEYS, 	"window_menu_key", 		1},
++{"Gen_wMin", 		GEN_ALL_KEYS, 	"minimize_window_key", 		1},
++{"Gen_wMax", 		GEN_ALL_KEYS, 	"maximize_window_key", 		1},
++{"Gen_wUnmax", 	GEN_ALL_KEYS, 	"unmaximize_window_key", 		1},
++{"Gen_wLower", 		GEN_ALL_KEYS, 	"lower_window_key", 		1},
++{"Gen_wClose", 		GEN_ALL_KEYS, 	"close_window_key", 		1},
++{"Gen_incOpacity", 	GEN_ALL_KEYS, 	"opacity_increase_key",		1},
++{"Gen_decOpacity", 	GEN_ALL_KEYS, 	"opacity_decrease_key",		1},
++{"Gen_slowAni", 	GEN_ALL_KEYS, 	"slow_animations_key", 		1},
++{"Gen_screen", 		GEN_ALL_KEYS, 	"run_command_screenshot_key", 	1},
++{"Gen_window", 		GEN_ALL_KEYS, 	"run_command_window_screenshot_key",1},
+ {"Gen_screen_com", 	GEN_ALL_KEYS, 	"command_screenshot", 		1},
+ {"Gen_window_com", 	GEN_ALL_KEYS, 	"command_window_screenshot", 	1},
+-{"Gen_desktop", 	GEN_ALL_KEYS, 	"show_desktop", 		1},
++{"Gen_desktop", 	GEN_ALL_KEYS, 	"show_desktop_key", 		1},
+ 	
+-{"Gen_key1", 		GEN_ALL_KEYS, 	"run_command0", 		1},
++{"Gen_key1", 		GEN_ALL_KEYS, 	"run_command0_key", 		1},
+ {"Gen_com1", 		GEN_ALL_KEYS, 	"command0", 			1},
+-{"Gen_key2", 		GEN_ALL_KEYS, 	"run_command1", 		1},
++{"Gen_key2", 		GEN_ALL_KEYS, 	"run_command1_key", 		1},
+ {"Gen_com2", 		GEN_ALL_KEYS, 	"command1", 			1},
+-{"Gen_key3", 		GEN_ALL_KEYS, 	"run_command2", 		1},
++{"Gen_key3", 		GEN_ALL_KEYS, 	"run_command2_key", 		1},
+ {"Gen_com3", 		GEN_ALL_KEYS, 	"command2", 			1},
+-{"Gen_key4", 		GEN_ALL_KEYS, 	"run_command3", 		1},
++{"Gen_key4", 		GEN_ALL_KEYS, 	"run_command3_key", 		1},
+ {"Gen_com4", 		GEN_ALL_KEYS, 	"command3", 			1},
+-{"Gen_key5", 		GEN_ALL_KEYS, 	"run_command4", 		1},
++{"Gen_key5", 		GEN_ALL_KEYS, 	"run_command4_key", 		1},
+ {"Gen_com5", 		GEN_ALL_KEYS, 	"command4", 			1},
+-{"Gen_key6", 		GEN_ALL_KEYS, 	"run_command5", 		1},
++{"Gen_key6", 		GEN_ALL_KEYS, 	"run_command5_key", 		1},
+ {"Gen_com6", 		GEN_ALL_KEYS, 	"command5", 			1},
+-{"Gen_key7", 		GEN_ALL_KEYS, 	"run_command6", 		1},
++{"Gen_key7", 		GEN_ALL_KEYS, 	"run_command6_key", 		1},
+ {"Gen_com7", 		GEN_ALL_KEYS, 	"command6", 			1},
+-{"Gen_key8", 		GEN_ALL_KEYS, 	"run_command7", 		1},
++{"Gen_key8", 		GEN_ALL_KEYS, 	"run_command7_key", 		1},
+ {"Gen_com8", 		GEN_ALL_KEYS, 	"command7", 			1},
+-{"Gen_key9", 		GEN_ALL_KEYS, 	"run_command8", 		1},
++{"Gen_key9", 		GEN_ALL_KEYS, 	"run_command8_key", 		1},
+ {"Gen_com9", 		GEN_ALL_KEYS, 	"command8", 			1},
+-{"Gen_key10", 		GEN_ALL_KEYS, 	"run_command9", 		1},
++{"Gen_key10", 		GEN_ALL_KEYS, 	"run_command9_key", 		1},
+ {"Gen_com10", 		GEN_ALL_KEYS, 	"command9", 			1},
+-{"Gen_key11", 		GEN_ALL_KEYS, 	"run_command10", 		1},
++{"Gen_key11", 		GEN_ALL_KEYS, 	"run_command10_key", 		1},
+ {"Gen_com11", 		GEN_ALL_KEYS, 	"command10", 			1},
+-{"Gen_key12", 		GEN_ALL_KEYS, 	"run_command11", 		1},
++{"Gen_key12", 		GEN_ALL_KEYS, 	"run_command11_key", 		1},
+ {"Gen_com12", 		GEN_ALL_KEYS, 	"command11", 			1},
+ 
+-{"Cube_next_slide", 	CUBE_KEYS, 	"next_slide", 		1},
+-{"Cube_prev_slide", 	CUBE_KEYS, 	"prev_slide", 		1},
+-{"Cube_unfold", 	CUBE_KEYS, 	"unfold", 		1},
+-
+-{"Move_initiate", 	MOVE_KEYS, 	"initiate", 		1},
+-	
+-{"Resize_initiate", 	RESIZE_KEYS, 	"initiate", 		1},
+-
+-{"Place_center", 	PLACE_KEYS, 	"center_initiate",	1},
+-
+-{"Rotate_initiate", 	ROTATE_KEYS, 	"initiate", 		1},
+-{"Rotate_left", 	ROTATE_KEYS, 	"rotate_left", 		1},
+-{"Rotate_right", 	ROTATE_KEYS, 	"rotate_right", 	1},
+-{"Rotate_left_window", 	ROTATE_KEYS, 	"rotate_left_window", 	1},
+-{"Rotate_right_window", ROTATE_KEYS, 	"rotate_right_window", 	1},	
+-{"Rotate_vp1", 		ROTATE_KEYS, 	"rotate_to_1", 		1},	
+-{"Rotate_vp1_w", 	ROTATE_KEYS, 	"rotate_to_1_window", 	1},
+-{"Rotate_vp2", 		ROTATE_KEYS, 	"rotate_to_2", 		1},	
+-{"Rotate_vp2_w", 	ROTATE_KEYS, 	"rotate_to_2_window", 	1},
+-{"Rotate_vp3", 		ROTATE_KEYS, 	"rotate_to_3", 		1},	
+-{"Rotate_vp3_w", 	ROTATE_KEYS, 	"rotate_to_3_window", 	1},
+-{"Rotate_vp4", 		ROTATE_KEYS, 	"rotate_to_4", 		1},	
+-{"Rotate_vp4_w", 	ROTATE_KEYS, 	"rotate_to_4_window", 	1},
+-{"Rotate_vp5", 		ROTATE_KEYS, 	"rotate_to_5", 		1},	
+-{"Rotate_vp5_w", 	ROTATE_KEYS, 	"rotate_to_5_window", 	1},
+-{"Rotate_vp6", 		ROTATE_KEYS, 	"rotate_to_6", 		1},	
+-{"Rotate_vp6_w", 	ROTATE_KEYS, 	"rotate_to_6_window", 	1},
+-{"Rotate_vp7", 		ROTATE_KEYS, 	"rotate_to_7", 		1},	
+-{"Rotate_vp7_w", 	ROTATE_KEYS, 	"rotate_to_7_window", 	1},
+-{"Rotate_vp8", 		ROTATE_KEYS, 	"rotate_to_8", 		1},	
+-{"Rotate_vp8_w", 	ROTATE_KEYS, 	"rotate_to_8_window", 	1},
+-{"Rotate_vp9", 		ROTATE_KEYS, 	"rotate_to_9", 		1},	
+-{"Rotate_vp9_w", 	ROTATE_KEYS, 	"rotate_to_9_window", 	1},
+-{"Rotate_vp10", 	ROTATE_KEYS, 	"rotate_to_10", 	1},	
+-{"Rotate_vp10_w", 	ROTATE_KEYS, 	"rotate_to_10_window", 	1},
+-{"Rotate_vp11", 	ROTATE_KEYS, 	"rotate_to_11", 	1},	
+-{"Rotate_vp11_w", 	ROTATE_KEYS, 	"rotate_to_11_window", 	1},
+-{"Rotate_vp12", 	ROTATE_KEYS, 	"rotate_to_12", 	1},	
+-{"Rotate_vp12_w", 	ROTATE_KEYS, 	"rotate_to_12_window", 	1},
+-
+-{"Scale_init", 		SCALE_KEYS,	"initiate", 		1},	
+-{"Scale_term", 	SCALE_KEYS, 	"terminate", 		1},
+-{"Scale_init_curr", 	SCALE_KEYS, 	"initiate_current", 	1},
+-{"Scale_term_curr", 	SCALE_KEYS, 	"terminate_current", 	1},
+-{"Scale_init_all", 	SCALE_KEYS, 	"initiate_all_screens", 1},
+-{"Scale_term_all", 	SCALE_KEYS, 	"terminate_all_screens",1},
+-{"Scale_next", 		SCALE_KEYS, 	"next_window", 		1},
+-{"Scale_prev", 		SCALE_KEYS, 	"prev_window", 		1},	
+-
+-{"Switch_init", 	SWITCH_KEYS, 	"initiate", 		1},
+-{"Switch_init_all", 	SWITCH_KEYS, 	"initiate_all", 	1},
+-{"Switch_prev", 	SWITCH_KEYS, 	"prev_window", 		1},
+-	
+-{"Wobbly_snap", 	WOBBLY_KEYS, 	"snap", 		1},
+-
+-{"Zoom_init", 		ZOOM_KEYS, 	"initiate", 		1},
+-{"Zoom_in", 		ZOOM_KEYS, 	"zoom_in", 		1},
+-{"Zoom_out",		ZOOM_KEYS, 	"zoom_out", 		1},
++{"Cube_next_slide", 	CUBE_ALL_KEYS, 	"next_slide_key", 		1},
++{"Cube_prev_slide", 	CUBE_ALL_KEYS, 	"prev_slide_key", 		1},
++{"Cube_unfold", 	CUBE_ALL_KEYS, 	"unfold_key", 		1},
++
++{"Move_initiate", 	MOVE_ALL_KEYS, 	"initiate_key", 		1},
++	
++{"Resize_initiate", 	RESIZE_ALL_KEYS, 	"initiate_key", 		1},
++
++{"Place_center", 	PLACE_KEYS, 	"center_initiate_key",	1},
++
++{"Rotate_initiate", 	ROTATE_ALL_KEYS, 	"initiate_key", 		1},
++{"Rotate_left", 	ROTATE_ALL_KEYS, 	"rotate_left_key", 		1},
++{"Rotate_right", 	ROTATE_ALL_KEYS, 	"rotate_right_key", 	1},
++{"Rotate_left_window", 	ROTATE_ALL_KEYS, 	"rotate_left_window_key", 	1},
++{"Rotate_right_window", ROTATE_ALL_KEYS, 	"rotate_right_window_key", 	1},	
++{"Rotate_vp1", 		ROTATE_ALL_KEYS, 	"rotate_to_1_key", 		1},	
++{"Rotate_vp1_w", 	ROTATE_ALL_KEYS, 	"rotate_to_1_window_key", 	1},
++{"Rotate_vp2", 		ROTATE_ALL_KEYS, 	"rotate_to_2_key", 		1},	
++{"Rotate_vp2_w", 	ROTATE_ALL_KEYS, 	"rotate_to_2_window_key", 	1},
++{"Rotate_vp3", 		ROTATE_ALL_KEYS, 	"rotate_to_3_key", 		1},	
++{"Rotate_vp3_w", 	ROTATE_ALL_KEYS, 	"rotate_to_3_window_key", 	1},
++{"Rotate_vp4", 		ROTATE_ALL_KEYS, 	"rotate_to_4_key", 		1},	
++{"Rotate_vp4_w", 	ROTATE_ALL_KEYS, 	"rotate_to_4_window_key", 	1},
++{"Rotate_vp5", 		ROTATE_ALL_KEYS, 	"rotate_to_5_key", 		1},	
++{"Rotate_vp5_w", 	ROTATE_ALL_KEYS, 	"rotate_to_5_window_key", 	1},
++{"Rotate_vp6", 		ROTATE_ALL_KEYS, 	"rotate_to_6_key", 		1},	
++{"Rotate_vp6_w", 	ROTATE_ALL_KEYS, 	"rotate_to_6_window_key", 	1},
++{"Rotate_vp7", 		ROTATE_ALL_KEYS, 	"rotate_to_7_key", 		1},	
++{"Rotate_vp7_w", 	ROTATE_ALL_KEYS, 	"rotate_to_7_window_key", 	1},
++{"Rotate_vp8", 		ROTATE_ALL_KEYS, 	"rotate_to_8_key", 		1},	
++{"Rotate_vp8_w", 	ROTATE_ALL_KEYS, 	"rotate_to_8_window_key", 	1},
++{"Rotate_vp9", 		ROTATE_ALL_KEYS, 	"rotate_to_9_key", 		1},	
++{"Rotate_vp9_w", 	ROTATE_ALL_KEYS, 	"rotate_to_9_window_key", 	1},
++{"Rotate_vp10", 	ROTATE_ALL_KEYS, 	"rotate_to_10_key", 	1},	
++{"Rotate_vp10_w", 	ROTATE_ALL_KEYS, 	"rotate_to_10_window_key", 	1},
++{"Rotate_vp11", 	ROTATE_ALL_KEYS, 	"rotate_to_11_key", 	1},	
++{"Rotate_vp11_w", 	ROTATE_ALL_KEYS, 	"rotate_to_11_window_key", 	1},
++{"Rotate_vp12", 	ROTATE_ALL_KEYS, 	"rotate_to_12_key", 	1},	
++{"Rotate_vp12_w", 	ROTATE_ALL_KEYS, 	"rotate_to_12_window_key", 	1},
++
++{"Scale_init", 		SCALE_ALL_KEYS,	"initiate_key", 		1},	
++{"Scale_term", 	SCALE_ALL_KEYS, 	"terminate_key", 		1},
++{"Scale_init_curr", 	SCALE_ALL_KEYS, 	"initiate_current_key", 	1},
++{"Scale_term_curr", 	SCALE_ALL_KEYS, 	"terminate_current_key", 	1},
++{"Scale_init_all", 	SCALE_ALL_KEYS, 	"initiate_all_screens_key", 1},
++{"Scale_term_all", 	SCALE_ALL_KEYS, 	"terminate_all_screens_key",1},
++{"Scale_next", 		SCALE_ALL_KEYS, 	"next_window_key", 		1},
++{"Scale_prev", 		SCALE_ALL_KEYS, 	"prev_window_key", 		1},	
++
++{"Switch_init", 	SWITCH_ALL_KEYS, 	"initiate_key", 		1},
++{"Switch_init_all", 	SWITCH_ALL_KEYS, 	"initiate_all_key", 	1},
++{"Switch_prev", 	SWITCH_ALL_KEYS, 	"prev_window_key", 		1},
++	
++{"Wobbly_snap", 	WOBBLY_KEYS, 	"snap_key", 		1},
++
++{"Zoom_init", 		ZOOM_ALL_KEYS, 	"initiate_key", 		1},
++{"Zoom_in", 		ZOOM_ALL_KEYS, 	"zoom_in_key", 		1},
++{"Zoom_out",		ZOOM_ALL_KEYS, 	"zoom_out_key", 		1},
+ 
+-{"Water_init", 		WATER_KEYS, 	"initiate", 		1},
+-{"Water_rain", 		WATER_KEYS, 	"toggle_rain", 		1},
++{"Water_init", 		WATER_ALL_KEYS, 	"initiate_key", 		1},
++{"Water_rain", 		WATER_ALL_KEYS, 	"toggle_rain_key", 		1},
+ 
+ {"Dock_unicon", 	DOCK_KEYS, 	"uniconify_key", 	1},
+ {"Dock_dock", 		DOCK_KEYS, 	"set_dock_background_key",1},	
+@@ -336,10 +336,10 @@
+ {"Miniwin_deicon", 	MINIWIN_KEYS, 	"demindow_key", 	1},
+ {"Miniwin_background", 	MINIWIN_KEYS, 	"set_dock_background_key",1},
+ 	
+-{"Bs_bri_inc", 		BS_KEYS, 	"brightness_increase", 	1},
+-{"Bs_bri_dec", 		BS_KEYS, 	"brightness_decrease", 	1},
+-{"Bs_sat_inc", 		BS_KEYS, 	"saturation_increase", 	1},
+-{"Bs_sat_dec", 		BS_KEYS, 	"saturation_decrease", 	1},
++{"Bs_bri_inc", 		BS_KEYS, 	"brightness_increase_key", 	1},
++{"Bs_bri_dec", 		BS_KEYS, 	"brightness_decrease_key", 	1},
++{"Bs_sat_inc", 		BS_KEYS, 	"saturation_increase_key", 	1},
++{"Bs_sat_dec", 		BS_KEYS, 	"saturation_decrease_key", 	1},
+ {"END","","",0}
+ };
+ 
+--- gset-compiz-0.3.4/src/gset.h.keys	2006-09-21 07:20:46.000000000 -0400
++++ gset-compiz-0.3.4/src/gset.h	2006-09-21 07:46:39.000000000 -0400
+@@ -1,20 +1,26 @@
+ #define GEN_ALL_KEYS "/apps/compiz/general/allscreens/options/"
+ #define GEN_KEYS "/apps/compiz/general/screen0/options/"
+ #define DECO_KEYS "/apps/compiz/plugins/decoration/allscreens/options/"
++#define CUBE_ALL_KEYS "/apps/compiz/plugins/cube/allscreens/options/"
+ #define CUBE_KEYS "/apps/compiz/plugins/cube/screen0/options/"
+ #define FADE_KEYS "/apps/compiz/plugins/fade/screen0/options/"
+ #define CUBE_DESC "/apps/compiz/plugins/cube/long_descrition"
+ #define MINI_KEYS "/apps/compiz/plugins/minimize/screen0/options/"
+-#define MOVE_KEYS "/apps/compiz/plugins/move/screen0/options/"
++#define MOVE_ALL_KEYS "/apps/compiz/plugins/move/allscreens/options/"
+ #define PLACE_KEYS "/apps/compiz/plugins/place/screen0/options/"
+-#define RESIZE_KEYS "/apps/compiz/plugins/resize/screen0/options/"
++#define RESIZE_ALL_KEYS "/apps/compiz/plugins/resize/allscreens/options/"
++#define ROTATE_ALL_KEYS "/apps/compiz/plugins/rotate/allscreens/options/"
+ #define ROTATE_KEYS "/apps/compiz/plugins/rotate/screen0/options/"
++#define SCALE_ALL_KEYS "/apps/compiz/plugins/scale/allscreens/options/"
+ #define SCALE_KEYS "/apps/compiz/plugins/scale/screen0/options/"
++#define SWITCH_ALL_KEYS "/apps/compiz/plugins/switcher/allscreens/options/"
+ #define SWITCH_KEYS "/apps/compiz/plugins/switcher/screen0/options/"
++#define WOBBLY_ALL_KEYS "/apps/compiz/plugins/wobbly/allscreens/options/"
+ #define WOBBLY_KEYS "/apps/compiz/plugins/wobbly/screen0/options/"
++#define ZOOM_ALL_KEYS "/apps/compiz/plugins/zoom/allscreens/options/"
+ #define ZOOM_KEYS "/apps/compiz/plugins/zoom/screen0/options/"
+ #define TRAIL_KEYS "/apps/compiz/plugins/trailfocus/screen0/options/"
+-#define WATER_KEYS "/apps/compiz/plugins/water/screen0/options/"
++#define WATER_ALL_KEYS "/apps/compiz/plugins/water/allscreens/options/"
+ #define MINIWIN_KEYS "/apps/compiz/plugins/miniwin/screen0/options/"
+ #define DOCK_KEYS "/apps/compiz/plugins/dock/screen0/options/"
+ #define BS_KEYS "/apps/compiz/plugins/bs/screen0/options/"

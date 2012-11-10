@@ -1,0 +1,69 @@
+--- gset-compiz-0.3.4/src/gset.c.root	2006-07-03 20:57:32.000000000 -0400
++++ gset-compiz-0.3.4/src/gset.c	2006-09-20 11:40:13.000000000 -0400
+@@ -1,12 +1,17 @@
++#define GCONF_ENABLE_INTERNALS
+ #include <gtk/gtk.h>
+ #include <glade/glade.h>
+ #include <gconf/gconf-client.h>
+ #include <gdk/gdkx.h>
+ #include <glib.h>
+ #include <string.h>
++#include <stdlib.h>
+ 
+ #include "gset.h"
+ 
++#define GCONF_LOCAL_SOURCE "xml::/etc/gconf/gconf.xml.defaults"
++#define COMPIZ_SCHEMA "/etc/gconf/schemas/compiz.schemas"
++
+ 
+ items general[] = {	
+ 	
+@@ -362,6 +367,8 @@
+ 	GtkFileFilter *filter;
+ 	GPtrArray *img_stores;
+ 	GtkTreeModel *model;
++	GError *err = NULL;
++	GConfEngine *conf;
+ 	
+ 	#ifdef DATADIR
+ 		
+@@ -394,7 +401,19 @@
+ 	
+ 	XErrorHandler handler = XSetErrorHandler (X_error);
+ 	
+-	client = gconf_client_get_default ();
++	if (geteuid() == 0) {
++		conf = gconf_engine_get_for_address(GCONF_LOCAL_SOURCE, &err);
++		if (conf  == NULL) {
++			g_assert(err != NULL);
++			fprintf(stderr, "Failed to access configuration source(s): %s\n", err->message);
++			g_error_free(err);
++			exit(1);
++		}
++	} else {
++		conf = gconf_engine_get_default ();
++	}
++	client = gconf_client_get_for_engine(conf);
++
+ 	gconf_client_set_global_default_error_handler 
+ 			((GConfClientErrorHandlerFunc) gconf_error_handling);
+ 	
+@@ -467,6 +486,18 @@
+ 	gtk_main ();
+ 
+ 	g_ptr_array_free (img_stores, TRUE);
++
++	gconf_client_suggest_sync(client, &err);
++	if (err != NULL) {
++		fprintf(stderr, "Error syncing config data: %s", err->message);
++		g_error_free(err);
++		exit(1);
++	}
++
++	if (geteuid() == 0) {
++		g_spawn_command_line_sync ("/usr/bin/killall -q -HUP gconfd-2", NULL, NULL, NULL, NULL);
++	}
++
+ 	g_object_unref (client);
+ 
+     	return 0;

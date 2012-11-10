@@ -1,0 +1,14 @@
+diff -p -up gset-compiz-0.3.4/src/gset.c.iValue gset-compiz-0.3.4/src/gset.c
+--- gset-compiz-0.3.4/src/gset.c.iValue	2008-03-03 00:56:57.000000000 +0100
++++ gset-compiz-0.3.4/src/gset.c	2008-03-03 14:59:42.000000000 +0100
+@@ -1196,8 +1196,8 @@ void get_gconf_keys (void)
+ 		break;
+ 	  	
+ 	case 5: /*   	wobbly window fx  		*/
+-	  	sValue = gconf_client_get_string (client, path, &err);
+-		if (strncmp (sValue, "Shiver", 6) == 0)
++		iValue = gconf_client_get_int (client, path, &err);
++		if (iValue)
+ 			gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON 
+ 							(widget), TRUE);
+ 	  	break;

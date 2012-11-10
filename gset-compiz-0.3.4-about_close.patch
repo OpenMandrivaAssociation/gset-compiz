@@ -1,0 +1,14 @@
+diff -p -up gset-compiz-0.3.4/src/gset.c.about_close gset-compiz-0.3.4/src/gset.c
+--- gset-compiz-0.3.4/src/gset.c.about_close	2008-03-03 00:55:32.000000000 +0100
++++ gset-compiz-0.3.4/src/gset.c	2008-03-03 00:56:51.000000000 +0100
+@@ -586,6 +586,10 @@ void menu_images (GtkMenuItem *menuitem,
+ void menu_about (GtkMenuItem *menuitem, gpointer data)
+ {
+ 	GtkWidget *widget = glade_xml_get_widget (xml, "About");
++
++	g_signal_connect_swapped(widget, "response",
++				 G_CALLBACK(gtk_widget_hide), widget);
++
+ 	gtk_widget_show (widget);
+ }
+ 

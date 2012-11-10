@@ -1,0 +1,11 @@
+--- configure.ac	2006-05-13 10:22:42.000000000 +0200
++++ configure.ac.oden	2007-08-30 13:22:25.000000000 +0200
+@@ -8,7 +8,7 @@
+ AC_CONFIG_HEADER([config.h])
+ AC_PREFIX_DEFAULT([/usr])
+ 
+-AM_INIT_AUTOMAKE([1.9 foreign])
++AM_INIT_AUTOMAKE([1.10 foreign])
+ 
+ # Checks for programs.
+ 

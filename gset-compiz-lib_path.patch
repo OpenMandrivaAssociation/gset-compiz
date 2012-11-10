@@ -1,0 +1,23 @@
+--- gset-compiz-0.3.3/src/gset.h.lib_path	2006-05-13 02:30:03.000000000 -0400
++++ gset-compiz-0.3.3/src/gset.h	2006-08-24 12:18:56.000000000 -0400
+@@ -22,9 +22,6 @@
+ 
+ #define VERSION 		"0.3.3" 
+ 
+-/* path to the plugin libraries */
+-#define LIB_PATH  		"/usr/lib/compiz"
+-
+ /* path to novel.png and icon.png, ... */
+ #define DEF_IMAGE_FOLDER 	"/usr/share/compiz"
+ 
+--- gset-compiz-0.3.3/src/Makefile.am.lib_path	2006-05-13 05:47:07.000000000 -0400
++++ gset-compiz-0.3.3/src/Makefile.am	2006-08-24 12:08:16.000000000 -0400
+@@ -2,7 +2,7 @@
+ 
+ INCLUDES = $(LIBGLADE_CFLAGS) $(GCONF_CFLAGS) $(GTK_CFLAGS)
+ 
+-AM_CFLAGS= -DDATADIR=\"$(datadir)/gset-compiz\" -DPIXDIR=\"$(datadir)/pixmaps\" -export-dynamic
++AM_CFLAGS= -DDATADIR=\"$(datadir)/gset-compiz\" -DPIXDIR=\"$(datadir)/pixmaps\" -DLIB_PATH=\"$(libdir)/compiz\" -export-dynamic
+ 
+ bin_PROGRAMS = gset-compiz
+ gset_compiz_SOURCES = gset.c gset.h
