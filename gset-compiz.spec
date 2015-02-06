@@ -6,7 +6,7 @@
 %else
 %define srcversion %{version}
 %endif
-%define release 11
+%define release 12
 
 Summary: A compiz configuration tool
 Name: %{name}
