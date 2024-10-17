@@ -21,7 +21,7 @@ Patch4:	 gset-compiz-0.3.4-about_close.patch
 Patch5:	 gset-compiz-0.3.4-iValue.patch
 License: GPL
 Group: System/X11
-Url: http://www.compiz.net/
+Url: https://www.compiz.net/
 BuildRequires: pkgconfig(libglade-2.0)
 BuildRequires: pkgconfig(gconf-2.0)
 BuildRequires: desktop-file-utils
